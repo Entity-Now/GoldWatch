@@ -5,3 +5,9 @@
 Real-Time monitoring software for gold price.
 
 ![GoldWatch](/Blog/preview.png)
+
+## publish
+
+```sh
+dotnet publish -c Release -r osx-x64 --self-contained true -p:PublishSingleFile=true -p:UseAppHost=true -p:OutputType=WinExe
+```

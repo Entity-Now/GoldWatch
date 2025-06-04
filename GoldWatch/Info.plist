@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+        "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <!-- 主程序执行文件名（必须与 MacOS/ 中可执行文件一致） -->
+        <key>CFBundleExecutable</key>
+        <string>GoldWatch</string>
+
+        <!-- 应用程序包标识符（建议唯一） -->
+        <key>CFBundleIdentifier</key>
+        <string>com.entitynow.goldwatch</string>
+
+        <!-- 应用显示名称 -->
+        <key>CFBundleName</key>
+        <string>GoldWatch</string>
+
+        <!-- 应用版本 -->
+        <key>CFBundleShortVersionString</key>
+        <string>1.0</string>
+        <key>CFBundleVersion</key>
+        <string>1.0.0</string>
+
+        <!-- 声明这是一个图形化应用（不弹出 Terminal） -->
+        <key>LSUIElement</key>
+        <true/>
+
+        <!-- 应用图标（应位于 Contents/Resources/GoldWatch.icns） -->
+        <key>CFBundleIconFile</key>
+        <string>Logo.icns</string>
+
+        <!-- App 类型 -->
+        <key>CFBundlePackageType</key>
+        <string>APPL</string>
+
+        <!-- 支持的系统版本（可选） -->
+        <key>LSMinimumSystemVersion</key>
+        <string>11.0</string>
+    </dict>
+</plist>

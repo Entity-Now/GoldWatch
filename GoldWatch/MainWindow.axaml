@@ -31,7 +31,7 @@
         <Border.ContextMenu>
             <ContextMenu>
                 <MenuItem Header="设置对比价格"/>
-                <MenuItem x:Name="ExitMenuItem" Header="退出"/>
+                <MenuItem Click="MenuItem_OnClick" Header="退出"/>
             </ContextMenu>
         </Border.ContextMenu>
     </Border>
