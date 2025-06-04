@@ -1,0 +1,38 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:convert="clr-namespace:GoldWatch.Convert"
+        xmlns:modelView="clr-namespace:GoldWatch.ModelView"
+        x:DataType="modelView:MainModelView"
+        Height="60" Width="220"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="GoldWatch.MainWindow"
+        Title="GoldWatch">
+    <Window.Resources>
+        <convert:BoolToColorConverter x:Key="BoolToColorConverter"/>
+    </Window.Resources>
+    <Border CornerRadius="10" Padding="10,5"  PointerPressed="InputElement_OnPointerPressed">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+            <!-- 当前价格 -->
+            <TextBlock Text="{Binding CurrentPrice}" 
+                       FontSize="16" FontWeight="Bold" VerticalAlignment="Center"
+                       Foreground="{Binding Color}"/>
+
+            <!-- 涨跌标志与百分比 -->
+            <TextBlock FontSize="16" FontWeight="Bold" VerticalAlignment="Center" Margin="8,0,0,0"
+                       Foreground="{Binding Color}">
+                <Run Text="{Binding Rise, Converter={StaticResource BoolToColorConverter}, ConverterParameter='↑|↓'}"/>
+                <Run Text="{Binding PriceRangePercentage}"/>
+            </TextBlock>
+        </StackPanel>
+
+        <Border.ContextMenu>
+            <ContextMenu>
+                <MenuItem Header="设置对比价格"/>
+                <MenuItem x:Name="ExitMenuItem" Header="退出"/>
+            </ContextMenu>
+        </Border.ContextMenu>
+    </Border>
+</Window>

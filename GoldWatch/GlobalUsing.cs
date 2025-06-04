@@ -1,0 +1,13 @@
+global using System;
+global using Flurl;
+global using Flurl.Http;
+global using Avalonia.ReactiveUI;
+global using ReactiveUI;
+global using Flurl.Http.Newtonsoft;
+global using System.Collections.Generic;
+global using System.Linq;
+global using System.Text;
+global using System.Text.RegularExpressions;
+global using System.Threading.Tasks;
+global using GoldWatch.Model;
+global using GoldWatch.Core.Fetcher;
