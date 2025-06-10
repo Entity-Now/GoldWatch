@@ -76,11 +76,20 @@ namespace GoldWatch.ModelView
                 });
             _ = Task.Run(async () =>
             {
-                var result = await RequestCloud.GetGoldPrice();
-                this.CurrentPrice = $"￥{result.CurrentPrice}";
-                Rise = result.CalculatePriceRangePercentage() > 0 ;
-                PriceRangePercentage = $"{result.CalculatePriceRangePercentage()}%";
+                while (true)
+                {
+                    await RequestCloudPrice();
+                    await Task.Delay(3000);
+                }
             });
+        }
+
+        async Task RequestCloudPrice()
+        {
+            var result = await RequestCloud.GetGoldPrice();
+            this.CurrentPrice = $"￥{result.CurrentPrice}";
+            Rise = result.CalculatePriceRangePercentage() > 0 ;
+            PriceRangePercentage = $"{result.CalculatePriceRangePercentage()}%";
         }
     }
 }
